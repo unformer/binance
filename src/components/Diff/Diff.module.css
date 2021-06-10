@@ -1,0 +1,18 @@
+.menu {
+    display:block;
+    text-align: center;
+    margin:0 auto;
+    padding:20px 0;
+}
+
+.diffList {
+    padding:0;
+    list-style:none;
+    display:block;
+    text-align: center;
+    max-height:80vh;
+    width:100%;
+    max-width:320px;
+    overflow:auto;
+    margin:0 auto;
+}

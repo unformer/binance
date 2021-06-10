@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { Header } from './components/Header/Header'
+import { Switch, Route } from 'react-router-dom'
+import withSuspense from './hoc/withSuspense'
+
+const GlassContainer = React.lazy(() => import('./components/Glass/GlassContainer'))
+const DiffContainer = React.lazy(() => import('./components/Diff/DiffContainer'))
+
+const SuspendedGlass = withSuspense(GlassContainer)
+const SuspendedDiff = withSuspense(DiffContainer)
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <div className="s.content">
+        <Switch>
+          <Route path='/glass' render={() => <SuspendedGlass />} />
+          <Route path='/diff' render={() => <SuspendedDiff />} />
+        </Switch>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

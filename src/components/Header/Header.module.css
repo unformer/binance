@@ -1,0 +1,39 @@
+.header {
+    display:flex;
+    height:10vh;
+    background:green;
+}
+
+.mainMenu {
+    display:flex;       
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+
+.mainMenu__item {
+    display:block;
+    width:100%;
+    max-width:150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight:700;
+    color:white;
+    padding:10px 20px;
+    border-radius:5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    background:red;
+    text-align: center;
+    cursor:pointer;
+}
+
+.mainMenu__item:hover {
+    background:white;
+    color:red;    
+}
+
+.active {
+    background:white;
+    color:red;
+}
